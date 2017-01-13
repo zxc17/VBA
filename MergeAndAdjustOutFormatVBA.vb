@@ -136,3 +136,29 @@ Application.DisplayAlerts = True
 Application.DisplayAlerts = True
 End Sub
 
+' '一些遍历目录的方法
+' Sub formatTrans()
+' Dim myPath$, myFile$, am As Workbook
+' Dim count As Integer
+' Application.DisplayAlerts = False
+' Application.ScreenUpdating = False
+' myPath = ThisWorkbook.Path & "\"
+' myPath = InputBox("输入要处理的文件夹", "提示", myPath)
+' myFile = Dir(myPath & "*.xls")
+' count = 1
+' Do While myFile <> ""
+' If myFile <> ThisWorkbook.Name Then
+' Set am = Workbooks.Open(myPath & myFile)
+' For Each shtt In am.Sheets
+    ' Debug.Print count & "、" & myFile
+    ' count = count + 1
+
+' Next
+' Workbooks(myFile).Close True
+' End If
+' myFile = Dir
+' Loop
+
+' Application.DisplayAlerts = ture
+' Application.DisplayAlerts = True
+' End Sub
